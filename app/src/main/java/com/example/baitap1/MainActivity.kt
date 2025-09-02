@@ -1,4 +1,4 @@
-package com.example.myfirstapp
+package com.example.baitap1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,16 +6,14 @@ import android.widget.Button
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    @Override
-    protected fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnClick: Button = findViewById(R.id.btnClickMe)
+        val btnClick = findViewById<Button>(R.id.btnClickMe)
 
-        btnClick.setOnClickListener({ v ->
-            Toast.makeText(this@MainActivity, "Xin chào! Bạn vừa bấm nút.", Toast.LENGTH_SHORT)
-                .show()
-        })
+        btnClick.setOnClickListener {
+            Toast.makeText(this, "Xin chào! Bạn vừa bấm nút.", Toast.LENGTH_SHORT).show()
+        }
     }
 }
